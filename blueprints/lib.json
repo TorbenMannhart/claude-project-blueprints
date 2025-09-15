@@ -1,0 +1,13 @@
+{
+  "name": "lib",
+  "placeholders": { "PROJECT_NAME": "" },
+  "files": [
+    { "path": ".aim/memory.jsonl", "content": "{\"type\":\"_aim\",\"source\":\"mcp-knowledge-graph\"}\n" },
+    { "path": ".gitignore", "append": true, "contentFrom": "snippets/gitignore.common" },
+    { "path": ".envrc", "mode": "0600", "content": "# direnv: allow\n" },
+    { "path": ".claude.json", "contentFrom": "snippets/claude.project.json.template" },
+    { "path": "docs/design.md", "content": "# Library – {{PROJECT_NAME}}\\n\\n- Purpose:\\n- Public API:\\n- Versioning/SemVer:\\n- Tests/CI:\\n" },
+    { "path": "CLAUDE.md", "contentFrom": "snippets/CLAUDE.md" }
+  ],
+  "postApply": [ "AIM:create_entities(Project={{PROJECT_NAME}})" ]
+}

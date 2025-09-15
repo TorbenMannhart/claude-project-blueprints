@@ -1,0 +1,17 @@
+{
+  "name": "webapp",
+  "placeholders": { "PROJECT_NAME": "", "DB_URL_RO": "" },
+  "files": [
+    { "path": ".aim/memory.jsonl", "mode": "0644",
+      "content": "{\"type\":\"_aim\",\"source\":\"mcp-knowledge-graph\"}\n" },
+    { "path": ".gitignore", "append": true, "contentFrom": "snippets/gitignore.common" },
+    { "path": ".envrc", "mode": "0600", "contentFrom": "snippets/envrc.example" },
+    { "path": ".claude.json", "mode": "0644", "contentFrom": "snippets/claude.project.json.template" },
+    { "path": "docs/design.md", "content": "# Design – {{PROJECT_NAME}}\\n\\n- Goal:\\n- Non-goals:\\n- Interfaces:\\n- Test strategy:\\n- Risks:\\n" },
+    { "path": "CLAUDE.md", "contentFrom": "snippets/CLAUDE.md" }
+  ],
+  "postApply": [
+    "AIM:create_entities(Project={{PROJECT_NAME}})",
+    "CHECKLIST:Open .envrc, fill GITHUB_TOKEN (repo-scoped) + DB_URL_RO (read-only), then run `direnv allow`."
+  ]
+}

@@ -1,0 +1,3 @@
+# direnv: allow
+export GITHUB_TOKEN="ghp_...fill_me..."
+export DATABASE_URL_RO="{{DB_URL_RO}}"

@@ -1,0 +1,16 @@
+{
+  "name": "service",
+  "placeholders": { "PROJECT_NAME": "", "DB_URL_RO": "" },
+  "files": [
+    { "path": ".aim/memory.jsonl", "content": "{\"type\":\"_aim\",\"source\":\"mcp-knowledge-graph\"}\n" },
+    { "path": ".gitignore", "append": true, "contentFrom": "snippets/gitignore.common" },
+    { "path": ".envrc", "mode": "0600", "contentFrom": "snippets/envrc.example" },
+    { "path": ".claude.json", "contentFrom": "snippets/claude.project.json.template" },
+    { "path": "docs/design.md", "content": "# Service – {{PROJECT_NAME}}\\n\\n- API surface:\\n- Data model:\\n- Ops/infra:\\n- Failure modes:\\n- SLOs/alerts:\\n" },
+    { "path": "CLAUDE.md", "contentFrom": "snippets/CLAUDE.md" }
+  ],
+  "postApply": [
+    "AIM:create_entities(Project={{PROJECT_NAME}})",
+    "CHECKLIST:Fill .envrc and run `direnv allow`."
+  ]
+}

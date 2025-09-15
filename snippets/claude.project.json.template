@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "mcp-knowledge-graph"],
+      "autoapprove": [
+        "aim_create_entities","aim_create_relations","aim_add_observations",
+        "aim_search_nodes","aim_read_graph","aim_open_nodes","aim_list_databases"
+      ]
+    },
+    "fs": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--root", "."],
+      "autoapprove": ["read_file", "write_file", "list_dir"]
+    },
+    "github": {
+      "command": "direnv",
+      "args": ["exec", ".", "npx", "-y", "github-mcp-server"]
+    },
+    "postgres": {
+      "command": "direnv",
+      "args": ["exec", ".", "npx", "-y", "postgres-mcp-server", "--mode", "read-only"]
+    }
+  }
+}
