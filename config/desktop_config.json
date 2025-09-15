@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "blueprints": {
+      "uri": "https://gitmcp.io/TorbenMannhart/claude-project-blueprints"
+    },
+    "agent-handbook": {
+      "uri": "https://gitmcp.io/TorbenMannhart/claude-agent-handbook"
+    },
+    "memory-global": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-knowledge-graph",
+        "--memory-path",
+        "/Users/torben/.aim/"
+      ],
+      "autoapprove": [
+        "aim_create_entities",
+        "aim_create_relations",
+        "aim_add_observations",
+        "aim_search_nodes",
+        "aim_read_graph",
+        "aim_open_nodes",
+        "aim_list_databases"
+      ]
+    }
+  }
+}
