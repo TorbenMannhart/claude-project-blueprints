@@ -24,5 +24,48 @@
         "aim_list_databases"
       ]
     }
+  },
+  "sell_signal_settings": {
+    "sell_trailing": {
+      "enabled": true,
+      "cooldown_days": 3
+    },
+    "sell_trendbreak": {
+      "enabled": true,
+      "cooldown_days": 3
+    },
+    "sell_overbought": {
+      "enabled": true,
+      "cooldown_days": 3
+    },
+    "sell_breakout_fail": {
+      "enabled": true,
+      "cooldown_days": 3
+    }
+  },
+  "sell_params_default": {
+    "trail_pct": 0.10,
+    "trail_lookback": 120,
+    "trendbreak_consec": 3,
+    "breakout_fail_lookback_days": 20,
+    "breakout_fail_breach_pct": 0.02
+  },
+  "per_isin_overrides": {
+    "CH0237935637": {
+      "trail_pct": 0.08
+    },
+    "IE00B3VVMM84": {
+      "trail_pct": 0.12
+    },
+    "IE00B6YX5C33": {
+      "trail_pct": 0.10
+    },
+    "LU0274211217": {
+      "trail_pct": 0.10
+    }
+  },
+  "portfolio": {
+    "cash_target_pct": 0.08,
+    "rebalance_extend_pct_above_sma50": 0.03
   }
 }
